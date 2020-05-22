@@ -1,4 +1,4 @@
-package com.shopping.baseproject.core.shoppingCart
+package com.shopping.baseproject.core.main.shoppingCart
 
 import androidx.recyclerview.widget.DiffUtil
 import com.shopping.baseproject.ItemCartBinding

@@ -1,4 +1,4 @@
-package com.shopping.baseproject.core.shoppingCart
+package com.shopping.baseproject.core.main.shoppingCart
 
 import android.view.View
 import androidx.lifecycle.ViewModelStoreOwner
@@ -7,7 +7,6 @@ import androidx.navigation.fragment.findNavController
 import com.shopping.baseproject.R
 import com.shopping.baseproject.ShoppingCartBinding
 import com.shopping.baseproject.core.main.grocerylist.GroceryListViewModel
-import com.shopping.baseproject.core.shoppingCart.CartAdapter
 import com.shopping.baseproject.data.models.AisleModel
 import com.shopping.baseproject.shared.base.BaseFragment
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
@@ -17,7 +16,11 @@ class ShoppingCartFragment :
 
     override val viewModel by sharedViewModel<GroceryListViewModel>(from = { activity as ViewModelStoreOwner })
     private val adapter by lazy {
-        CartAdapter { handleOnCampaignItemClick(it) }
+        CartAdapter {
+            handleOnCampaignItemClick(
+                it
+            )
+        }
     }
 
     override fun setupViews() {

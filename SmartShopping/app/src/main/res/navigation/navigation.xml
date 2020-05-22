@@ -17,14 +17,6 @@
     </fragment>
 
     <fragment
-        android:id="@+id/shoppingCartFragment"
-        android:name="com.shopping.baseproject.core.main.shoppingCart.ShoppingCartFragment"
-        android:label="ShoppingCartFragment"
-        tools:layout="@layout/fr_shopping_cart">
-
-    </fragment>
-
-    <fragment
         android:id="@+id/loginFragment"
         android:name="com.shopping.baseproject.core.main.auth.login.LoginFragment"
         android:label="LoginFragment"
@@ -43,4 +35,22 @@
         android:name="com.shopping.baseproject.core.main.auth.register.RegisterFragment"
         android:label="RegisterFragment"
         tools:layout="@layout/fr_register" />
+
+    <fragment
+        android:id="@+id/shoppingCartFragment"
+        android:name="com.shopping.baseproject.core.main.shoppingCart.ShoppingCartFragment"
+        android:label="ShoppingCartFragment"
+        tools:layout="@layout/fr_shopping_cart">
+        <action
+            android:id="@+id/action_shoppingCartFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.shopping.baseproject.core.main.map.MapFragment"
+        android:label="MapFragment"
+        tools:layout="@layout/fr_map">
+    </fragment>
+
 </navigation>

@@ -1,6 +1,5 @@
 package com.shopping.baseproject.core.main.grocerylist
 
-import android.content.Intent
 import android.view.View
 import androidx.lifecycle.ViewModelStoreOwner
 import androidx.lifecycle.observe
@@ -10,7 +9,6 @@ import com.shopping.baseproject.R
 import com.shopping.baseproject.core.main.BarcodeScannerActivity
 import com.shopping.baseproject.data.models.AisleModel
 import com.shopping.baseproject.shared.base.BaseFragment
-import com.shopping.baseproject.shared.utils.extensions.observeNonNull
 import kotlinx.android.synthetic.main.fr_grocery_list.*
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 

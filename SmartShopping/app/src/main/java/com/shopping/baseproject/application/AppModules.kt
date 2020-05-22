@@ -1,11 +1,9 @@
 package com.shopping.baseproject.application
 
-import com.shopping.baseproject.core.auth.login.LoginViewModel
-import com.shopping.baseproject.core.auth.register.RegisterViewModel
 import com.shopping.baseproject.core.main.MainActivityViewModel
-import com.shopping.baseproject.core.main.doneShopping.DoneShoppingViewModel
 import com.shopping.baseproject.core.main.auth.login.LoginViewModel
 import com.shopping.baseproject.core.main.auth.register.RegisterViewModel
+import com.shopping.baseproject.core.main.doneShopping.DoneShoppingViewModel
 import com.shopping.baseproject.core.main.grocerylist.GroceryListViewModel
 import com.shopping.baseproject.core.main.map.MapViewModel
 import com.shopping.baseproject.core.main.splash.SplashScreenViewModel
@@ -21,7 +19,7 @@ object AppModules {
         viewModel { LoginViewModel() }
         viewModel { RegisterViewModel() }
         viewModel { GroceryListViewModel(get()) }
-
+        viewModel { MapViewModel(get()) }
     }
 
     private val remoteModule = module {

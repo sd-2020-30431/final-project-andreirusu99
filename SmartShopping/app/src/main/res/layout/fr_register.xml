@@ -6,7 +6,7 @@
     <data class=".RegisterBinding">
         <variable
             name="viewModel"
-            type="com.shopping.baseproject.core.auth.register.RegisterViewModel" />
+            type="com.shopping.baseproject.core.main.auth.register.RegisterViewModel" />
     </data>
 
     <ScrollView

@@ -1,7 +1,9 @@
 package com.shopping.baseproject.core.main.grocerylist
 
 import androidx.lifecycle.*
-import com.shopping.baseproject.data.api.*
+import com.shopping.baseproject.data.api.Aisle
+import com.shopping.baseproject.data.api.ShoppingProvider
+import com.shopping.baseproject.data.api.StoreCell
 import com.shopping.baseproject.data.models.AisleModel
 import com.shopping.baseproject.data.models.StoreCellModel
 import com.shopping.baseproject.shared.event.BaseEvent

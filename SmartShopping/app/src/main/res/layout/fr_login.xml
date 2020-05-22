@@ -6,7 +6,7 @@
     <data class=".LoginBinding">
         <variable
             name="viewModel"
-            type="com.shopping.baseproject.core.auth.login.LoginViewModel" />
+            type="com.shopping.baseproject.core.main.auth.login.LoginViewModel" />
     </data>
 
     <ScrollView

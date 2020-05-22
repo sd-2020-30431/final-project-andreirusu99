@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">SmartShopping</string>
+    <string name="google_maps_key">AIzaSyBFjvy_01iJP33I-xwtZrpF04LyjBofX1s</string>
+    <string name="grocery_list">Grocery List</string>
+    <string name="smart_shopping">Shoppify</string>
+    <string name="shopping_cart">Shopping Cart</string>
+    <string name="go_shopping">Go Shopping</string>
+    <string name="choose_store">Choose store</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="login">Login</string>
+    <string name="or">or</string>
+    <string name="create_account">Create an Account</string>
+</resources>

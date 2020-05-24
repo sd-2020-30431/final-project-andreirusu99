@@ -1,10 +1,12 @@
 package com.shopping.baseproject.core.main.map
 
 import android.Manifest
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -48,6 +50,20 @@ class MapFragment : BaseFragment<MapBinding, MapViewModel>(R.layout.fr_map), OnM
         setupListeners()
     }
 
+    private fun setupObservers(googleMap: GoogleMap?) {
+        viewModel.stores.observeNonNull(this) { stores ->
+            for (store in stores) {
+                googleMap?.let {
+                    val marker = it.addMarker(
+                        MarkerOptions().position(LatLng(store.latitude, store.longitude))
+                            .title(store.name)
+                    )
+                    markers.put(marker, store.id)
+                }
+            }
+        }
+    }
+
     override fun onMapReady(googleMap: GoogleMap) {
         this.googleMap = googleMap
         googleMap.setOnMarkerClickListener(this)
@@ -69,6 +85,32 @@ class MapFragment : BaseFragment<MapBinding, MapViewModel>(R.layout.fr_map), OnM
         googleMap.isMyLocationEnabled = true
         googleMap.uiSettings?.isMyLocationButtonEnabled = true
         googleMap.setOnMarkerClickListener(this)
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String>,
+        grantResults: IntArray
+    ) {
+        when (requestCode) {
+            TAG_CODE_PERMISSION_LOCATION -> {
+                // If request is cancelled, the result arrays are empty.
+                if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
+                    showCurrentLocation()
+                }
+                return
+            }
+        }
+    }
+
+    private fun isPermissionGranted(permission: String): Boolean {
+        context?.let {
+            return ContextCompat.checkSelfPermission(
+                it,
+                permission
+            ) == PackageManager.PERMISSION_GRANTED
+        }
+        return false
     }
 
     override fun onResume() {

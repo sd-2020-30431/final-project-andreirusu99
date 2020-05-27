@@ -51,6 +51,19 @@
         android:name="com.shopping.baseproject.core.main.map.MapFragment"
         android:label="MapFragment"
         tools:layout="@layout/fr_map">
+        <action
+            android:id="@+id/action_mapFragment_to_shoppingRouteFragment"
+            app:destination="@id/shoppingRouteFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/shoppingRouteFragment"
+        android:name="com.shopping.baseproject.core.main.shoppingroute.ShoppingRouteFragment"
+        android:label="ShoppingRouteFragment"
+        tools:layout="@layout/fr_shopping_route">
+        <argument
+            android:name="storeId"
+            app:argType="string" />
     </fragment>
 
 </navigation>

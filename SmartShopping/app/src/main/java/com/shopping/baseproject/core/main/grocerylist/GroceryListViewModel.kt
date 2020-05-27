@@ -110,15 +110,6 @@ class GroceryListViewModel(private val shoppingProvider: ShoppingProvider) : Vie
         }
     }
 
-    fun removeAisleWithBarcodeFromCart(barcode: String): String {
-        val scannedAisle = _groceryList.value?.find { it.barcode == barcode && it.isInCart }
-        scannedAisle?.let {
-            addOrRemoveFromCart(scannedAisle)
-        }
-        return if (scannedAisle != null)
-            "You picked up product from " + scannedAisle.name else "This item is not in your cart."
-    }
-
     fun getShopMapFromAPI(id: Int) {
         viewModelScope.launch {
             val storeMap = shoppingProvider.getShopMap(id)

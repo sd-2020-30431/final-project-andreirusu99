@@ -6,7 +6,6 @@ import androidx.lifecycle.observe
 import androidx.navigation.fragment.findNavController
 import com.shopping.baseproject.GroceryListBinding
 import com.shopping.baseproject.R
-import com.shopping.baseproject.core.main.BarcodeScannerActivity
 import com.shopping.baseproject.data.models.AisleModel
 import com.shopping.baseproject.shared.base.BaseFragment
 import kotlinx.android.synthetic.main.fr_grocery_list.*

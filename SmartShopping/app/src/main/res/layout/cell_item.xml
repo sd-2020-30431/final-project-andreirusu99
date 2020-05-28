@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class=".CellMapBinding">
+
+        <variable
+            name="isYouHere"
+            type="Boolean" />
+
+        <variable
+            name="color"
+            type="Integer" />
+
+        <variable
+            name="isInPath"
+            type="Boolean" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/store_cell"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:background="@{(color==0 || color==-2 || color==-3 || color==-4) ? @color/empty : (color==-1 ? @color/wall : @color/aisle)}">
+
+        <ImageView
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:background="@drawable/ic_dot"
+            android:visibility="@{(isInPath==true &amp;&amp; color!=-4) ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/ic_cashier_machine"
+            android:visibility="@{color==-4 ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/aislePin"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="9dp"
+            android:background="@{color==-4 ? @drawable/ic_cashier_pin : ((color==-2 || isYouHere) ? @drawable/ic_you_pin :@drawable/pin_selector)}"
+            android:visibility="@{(isInPath==true &amp;&amp; color!=0) ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
